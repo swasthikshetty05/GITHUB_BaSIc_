@@ -10,9 +10,11 @@ def home():
 def abc():
     return render_template("abc.html")
 
-@app.route("/greet/<name>")
+# Dynamic route for any name
+@app.route("/<name>")
 def greet(name):
     return render_template("greet.html", name=name)
 
 if __name__ == "__main__":
     app.run(debug=True)
+
